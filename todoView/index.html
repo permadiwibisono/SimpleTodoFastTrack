@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>My simple todo</title>
+	<meta charset="utf-8" />
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/bootstrap.min.js"></script>
+
+</head>
+<body ng-app="todoView" ng-controller="BodyCtrl">
+    <div class="container">
+        <div class="row">
+            <h4>status: {{status}}</h4>
+        </div>
+    </div>
+    <div class="container" ng-view="">
+
+    </div>
+    <script src="Scripts/app.js"></script>
+    <script src="Scripts/controllers/todo.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+﻿
+<div class="container">
+    <div class="row">
+        <form role="form" ng-submit="addTodo()">
+            <div class="row">
+                <div class="input-group">
+                    <input type="text" ng-model="todoNew" placeholder="What needs to be done?" class="form-control">
+                    <span class="input-group-btn">
+                        <input type="submit" class="btn btn-primary" value="Add">
+                    </span>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<h2 ng-init="load()">Todo list</h2>
+<div ng-repeat="e in entities">
+    <div class="row" style="margin-top:10px;">
+        <div class="input-group">
+            <span class="input-group-addon">
+                <input type="checkbox" ng-disabled="e.IsCompleted" ng-change="completedTodo(e)" aria-label="Checkbox for following text input" ng-model="e.IsCompleted">
+            </span>
+            <input type="text" class="form-control" ng-disabled="e.IsCompleted" ng-model="e.Name" aria-label="Text input with checkbox">
+            <span class="input-group-btn">
+                <button class="btn btn-danger" ng-click="deleteTodo(e.Id)"><i class="glyphicon glyphicon-trash"></i></button>
+                <button class="btn btn-success" ng-click="updateTodo(e)"  ng-disabled="e.IsCompleted"><i class="glyphicon glyphicon-floppy-disk"></i></button>
+            </span>
+        </div>
+    </div>
+</div>
